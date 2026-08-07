@@ -17,11 +17,9 @@ TARGET_2ND_CPU_VARIANT := generic
 TARGET_SUPPORTS_64_BIT_APPS := false
 TARGET_SUPPORTS_32_BIT_APPS := true
 
-# Kernel Pré-compilado (Extraído do Boot Original)
+# Kernel Pré-compilado (DTB já incluso no binário do kernel)
 TARGET_NO_KERNEL := false
 TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/kernel
-BOARD_PREBUILT_DTBIMAGE := $(DEVICE_PATH)/prebuilt/dtb
-BOARD_INCLUDE_DTB_IN_BOOTIMG := true
 
 # Hardware & Plataforma
 BOARD_HAS_NO_REAL_SDCARD := true
