@@ -17,7 +17,11 @@ TARGET_2ND_CPU_VARIANT := generic
 TARGET_SUPPORTS_64_BIT_APPS := false
 TARGET_SUPPORTS_32_BIT_APPS := true
 
+<<<<<<< HEAD
 # Kernel Pré-compilado (DTB já incluso no binário do kernel)
+=======
+# Kernel Pré-compilado (DTB integrado)
+>>>>>>> 37ae8c8 (fix: resolve rsync vendor directory conflict during ramdisk creation)
 TARGET_NO_KERNEL := false
 TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/kernel
 
@@ -25,11 +29,17 @@ TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/kernel
 BOARD_HAS_NO_REAL_SDCARD := true
 TARGET_BOARD_PLATFORM := ceres
 
-# Configurações de Boot e Arquitetura Virtual A/B (Recovery as Boot)
+# Configurações de Boot e Recovery as Boot (Virtual A/B)
 BOARD_BUILD_SYSTEM_ROOT_IMAGE := false
 BOARD_USES_RECOVERY_AS_BOOT := true
 AB_OTA_UPDATER := true
 
+<<<<<<< HEAD
+=======
+# Previne conflitos de symlink do rsync na estrutura /vendor da ramdisk
+BOARD_ROOT_EXTRA_FOLDERS := vendor
+
+>>>>>>> 37ae8c8 (fix: resolve rsync vendor directory conflict during ramdisk creation)
 # Partições para o sistema A/B
 AB_OTA_PARTITIONS += \
     boot \
