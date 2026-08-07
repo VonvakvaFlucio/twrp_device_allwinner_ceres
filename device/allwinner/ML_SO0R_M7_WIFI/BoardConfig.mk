@@ -6,7 +6,6 @@ TARGET_ARCH_VARIANT := armv8-a
 TARGET_CPU_ABI := arm64-v8a
 TARGET_CPU_ABI2 :=
 TARGET_CPU_VARIANT := generic
-TARGET_SUPPORTS_64_BIT_APPS := false
 
 TARGET_2ND_ARCH := arm
 TARGET_2ND_ARCH_VARIANT := armv7-a-neon
@@ -28,6 +27,17 @@ TARGET_BOARD_PLATFORM := ceres
 BOARD_BUILD_SYSTEM_ROOT_IMAGE := false
 BOARD_USES_RECOVERY_AS_BOOT := true
 AB_OTA_UPDATER := true
+
+# Partições para o sistema A/B (Corrige o erro AB_OTA_PARTITIONS)
+AB_OTA_PARTITIONS += \
+    boot \
+    dtbo \
+    init_boot \
+    vendor_boot \
+    system \
+    system_ext \
+    product \
+    vendor
 
 # Partições Dinâmicas / EROFS / F2FS
 BOARD_SUPER_PARTITION_GROUPS := allwinner_dynamic_partitions
