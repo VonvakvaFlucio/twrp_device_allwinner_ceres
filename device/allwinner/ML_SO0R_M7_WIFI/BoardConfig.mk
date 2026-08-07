@@ -7,14 +7,19 @@ TARGET_CPU_ABI := arm64-v8a
 TARGET_CPU_ABI2 :=
 TARGET_CPU_VARIANT := generic
 
-# Kernel
+# Kernel Pré-compilado (Extraído do Boot Original)
 TARGET_NO_KERNEL := false
+TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/kernel
+BOARD_PREBUILT_DTBIMAGE := $(DEVICE_PATH)/prebuilt/dtb
+BOARD_INCLUDE_DTB_IN_BOOTIMG := true
+
+# Hardware & Plataforma
 BOARD_HAS_NO_REAL_SDCARD := true
 TARGET_BOARD_PLATFORM := ceres
 
-# Configurações de Boot e Arquitetura A/B (Virtual A/B)
+# Configurações de Boot e Arquitetura Virtual A/B (Recovery as Boot)
 BOARD_BUILD_SYSTEM_ROOT_IMAGE := false
-BOARD_USES_RECOVERY_AS_BOOT := false
+BOARD_USES_RECOVERY_AS_BOOT := true
 AB_OTA_UPDATER := true
 
 # Partições Dinâmicas / EROFS / F2FS

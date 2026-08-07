@@ -53,10 +53,10 @@ jobs:
           source build/envsetup.sh
           export ALLOW_MISSING_DEPENDENCIES=true
           lunch omni_ML_SO0R_M7_WIFI-eng
-          mka recoveryimage
+          mka bootimage
 
       - name: Upload Artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: twrp-allwinner-recovery
-          path: workspace/out/target/product/ML_SO0R_M7_WIFI/recovery.img
+          name: twrp-allwinner-boot
+          path: workspace/out/target/product/ML_SO0R_M7_WIFI/boot.img
