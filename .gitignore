@@ -1,0 +1,5 @@
+*.img
+*.gz
+twrp_dump_allwinner/
+particoes.txt
+fstab_dump.txt
