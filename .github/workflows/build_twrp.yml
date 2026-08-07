@@ -32,14 +32,15 @@ jobs:
           chmod a+x ~/bin/repo
           echo "$HOME/bin" >> $GITHUB_PATH
 
-      - name: Initialize TWRP Manifest
+      - name: Initialize TWRP Manifest (Shallow Sync)
         run: |
           mkdir workspace
           cd workspace
           git config --global user.name "Builder"
           git config --global user.email "builder@action.com"
-          repo init -u https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp.git -b twrp-12.1
-          repo sync -j8 --force-sync --no-clone-bundle
+          repo init -u https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp.git -b twrp-12.1 --depth=1
+          repo sync -c -j2 --force-sync --no-clone-bundle --no-tags --progress
+
 
       - name: Inject Device Tree
         run: |
