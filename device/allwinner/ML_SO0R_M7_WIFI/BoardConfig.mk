@@ -13,6 +13,10 @@ TARGET_2ND_CPU_ABI := armeabi-v7a
 TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := generic
 
+# Desativar suporte a apps 64-bit no Userspace (Android 13 Go Edition)
+TARGET_SUPPORTS_64_BIT_APPS := false
+TARGET_SUPPORTS_32_BIT_APPS := true
+
 # Kernel Pré-compilado (Extraído do Boot Original)
 TARGET_NO_KERNEL := false
 TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/kernel
@@ -28,7 +32,7 @@ BOARD_BUILD_SYSTEM_ROOT_IMAGE := false
 BOARD_USES_RECOVERY_AS_BOOT := true
 AB_OTA_UPDATER := true
 
-# Partições para o sistema A/B (Corrige o erro AB_OTA_PARTITIONS)
+# Partições para o sistema A/B
 AB_OTA_PARTITIONS += \
     boot \
     dtbo \
