@@ -1,11 +1,17 @@
 DEVICE_PATH := device/allwinner/ML_SO0R_M7_WIFI
 
-# Arquitetura
+# Arquitetura Híbrida (Kernel 64-bit + Userspace 32-bit)
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a
 TARGET_CPU_ABI := arm64-v8a
 TARGET_CPU_ABI2 :=
 TARGET_CPU_VARIANT := generic
+
+TARGET_2ND_ARCH := arm
+TARGET_2ND_ARCH_VARIANT := armv7-a-neon
+TARGET_2ND_CPU_ABI := armeabi-v7a
+TARGET_2ND_CPU_ABI2 := armeabi
+TARGET_2ND_CPU_VARIANT := generic
 
 # Kernel Pré-compilado (Extraído do Boot Original)
 TARGET_NO_KERNEL := false
@@ -28,7 +34,7 @@ TARGET_USERIMAGES_USE_F2FS := true
 TARGET_USERIMAGES_USE_EXT4 := true
 BOARD_EROFS_COMPRESSOR := lz4
 
-# TWRP UI & Touch
+# TWRP UI & Touch (Resolução 800x480)
 TW_THEME := portrait_mdpi
 TARGET_SCREEN_WIDTH := 480
 TARGET_SCREEN_HEIGHT := 800
