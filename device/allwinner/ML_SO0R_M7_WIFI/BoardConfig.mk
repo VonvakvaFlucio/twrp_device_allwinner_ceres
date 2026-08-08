@@ -1,6 +1,6 @@
 DEVICE_PATH := device/allwinner/ML_SO0R_M7_WIFI
 
-# Arquitetura Híbrida (Kernel 64-bit + Userspace 32-bit)
+# Arquitetura Hibrida (Kernel 64-bit + Userspace 32-bit)
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a
 TARGET_CPU_ABI := arm64-v8a
@@ -17,11 +17,7 @@ TARGET_2ND_CPU_VARIANT := generic
 TARGET_SUPPORTS_64_BIT_APPS := false
 TARGET_SUPPORTS_32_BIT_APPS := true
 
-<<<<<<< HEAD
-# Kernel Pré-compilado (DTB já incluso no binário do kernel)
-=======
-# Kernel Pré-compilado (DTB integrado)
->>>>>>> 37ae8c8 (fix: resolve rsync vendor directory conflict during ramdisk creation)
+# Kernel Pre-compilado (DTB ja incluso no binario do kernel)
 TARGET_NO_KERNEL := false
 TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/kernel
 
@@ -29,18 +25,15 @@ TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/kernel
 BOARD_HAS_NO_REAL_SDCARD := true
 TARGET_BOARD_PLATFORM := ceres
 
-# Configurações de Boot e Recovery as Boot (Virtual A/B)
+# Configuraçoes de Boot e Recovery as Boot (Virtual A/B)
 BOARD_BUILD_SYSTEM_ROOT_IMAGE := false
 BOARD_USES_RECOVERY_AS_BOOT := true
 AB_OTA_UPDATER := true
 
-<<<<<<< HEAD
-=======
 # Previne conflitos de symlink do rsync na estrutura /vendor da ramdisk
 BOARD_ROOT_EXTRA_FOLDERS := vendor
 
->>>>>>> 37ae8c8 (fix: resolve rsync vendor directory conflict during ramdisk creation)
-# Partições para o sistema A/B
+# Partiçoes para o sistema A/B
 AB_OTA_PARTITIONS += \
     boot \
     dtbo \
@@ -51,13 +44,13 @@ AB_OTA_PARTITIONS += \
     product \
     vendor
 
-# Partições Dinâmicas / EROFS / F2FS
+# Partiçoes Dinamicas / EROFS / F2FS
 BOARD_SUPER_PARTITION_GROUPS := allwinner_dynamic_partitions
 TARGET_USERIMAGES_USE_F2FS := true
 TARGET_USERIMAGES_USE_EXT4 := true
 BOARD_EROFS_COMPRESSOR := lz4
 
-# TWRP UI & Touch (Resolução 800x480)
+# TWRP UI & Touch (Resoluçao 800x480)
 TW_THEME := portrait_mdpi
 TARGET_SCREEN_WIDTH := 480
 TARGET_SCREEN_HEIGHT := 800
