@@ -25,6 +25,10 @@ TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/kernel
 BOARD_HAS_NO_REAL_SDCARD := true
 TARGET_BOARD_PLATFORM := ceres
 
+# Tamanho das Partiçoes (128MB para Boot/Recovery)
+BOARD_BOOTIMAGE_PARTITION_SIZE := 134217728
+BOARD_FLASH_BLOCK_SIZE := 4096
+
 # Configuraçoes de Boot e Recovery as Boot (Virtual A/B)
 BOARD_BUILD_SYSTEM_ROOT_IMAGE := false
 BOARD_USES_RECOVERY_AS_BOOT := true
